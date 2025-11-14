@@ -1,0 +1,48 @@
+{% load static %}
+<!doctype html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ prop.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+    <a href="/">« Volver</a>
+</header>
+
+
+<h2>{{ prop.title }}</h2>
+
+{% if prop.id == 1 %}
+    <img src="{% static 'img/apartamento.jpg' %}" 
+         alt="Apartamento Centro"
+         style="width:400px; height:250px; object-fit:cover; border-radius:10px;">
+{% elif prop.id == 2 %}
+    <img src="{% static 'img/casa_rural.jpg' %}" 
+         alt="casa rural"
+         style="width:400px; height:250px; object-fit:cover; border-radius:10px;">
+{% else %}
+    <img src="{% static 'img/default.jpg' %}" 
+         alt="Imagen no disponible"
+         style="width:400px; height:250px; object-fit:cover; border-radius:10px;">
+{% endif %}
+</section>
+
+
+<p>{{ prop.summary }}</p>
+
+<ul>
+    <li><strong>Habitaciones:</strong> {{ prop.rooms }}</li>
+    <li><strong>Baños:</strong> {{ prop.baths }}</li>
+    <li><strong>Área:</strong> {{ prop.area }}</li>
+</ul>
+
+<p><strong>Precio:</strong> {{ prop.price }}</p>
+
+<a href="{% url 'agendar' %}" class="btn">Agendar visita</a>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Santa Marta Lodgings - Django</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  {% load static %}
+</head>
+<body>
+  <header><h1>Santa Marta Real State</h1></header>
+  <section class="banner">Bienvenido a Santa Marta</section>
+  <section class="galeria">
+  {% for p in propiedades %}
+    <article class="card">
+
+      {% if p.title == "Apartamento Centro" %}
+        <img src="{% static 'img/apartamento.jpg' %}" alt="Apartamento" >
+      {% elif p.title == "casa Rural" %}
+        <img src="{% static 'img/casa_rural.jpg' %}" alt="Casa Rural" >
+      {% endif %}
+
+      <h3>{{ p.title }}</h3>
+      <p>{{ p.price }}</p>
+      <a href="{% url 'detalle' p.id %}">Ver más</a>
+    </article>
+  {% endfor %}
+</section>
+
+</body>
+</html>
+
