@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="es">
-<head><meta charset="utf-8"><title>Agendar visita</title><link rel="stylesheet" href="/static/css/style.css"></head>
+<head><meta charset="utf-8"><title>Agendar visita</title><link href="/static/css/style.css" rel="stylesheet"></head>
 <body>
   <h2>Agendar Visita</h2>
   <form method="post">
@@ -8,8 +8,8 @@
     <input name="nombre" placeholder="Nombre completo" required><br>
     <input name="email" placeholder="Correo" required><br>
     <input name="tel" placeholder="Teléfono" required><br>
-    <input type="date" name="fecha" required><br>
-    <input type="time" name="hora" required><br>
+    <input name="fecha" type="date" required><br>
+    <input name="hora" type="time" required><br>
     <textarea name="msg" placeholder="Mensaje" required></textarea><br>
     <button type="submit">Enviar</button>
   </form>

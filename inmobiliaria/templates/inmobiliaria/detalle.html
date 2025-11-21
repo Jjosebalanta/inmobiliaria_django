@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ prop.title }}</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
 <body>
 
@@ -13,27 +13,49 @@
     <a href="/">« Volver</a>
 </header>
 
-
+<section class="property-image">
 <h2>{{ prop.title }}</h2>
 
 {% if prop.id == 1 %}
-    <img src="{% static 'img/apartamento.jpg' %}" 
-         alt="Apartamento Centro"
-         style="width:400px; height:250px; object-fit:cover; border-radius:10px;">
+    <img src="{% static 'img/apartamento.jpg' %}" alt="Apartamento Centro" style="width:400px; height:250px; object-fit:cover; border-radius:10px;">
+    <img src="{% static 'img/apartamento_1/sala.jpg' %}" alt="Apartamento Centro" style="width:400px; height:250px; object-fit:cover; border-radius:10px;">
+    <img src="{% static 'img/apartamento_1/sala2.jpg' %}" alt="Apartamento Centro" style="width:400px; height:250px; object-fit:cover; border-radius:10px;">
+    <img src="{% static 'img/apartamento_1/habitacion.jpg' %}" alt="Apartamento Centro" style="width:400px; height:250px; object-fit:cover; border-radius:10px;">
+    <img src="{% static 'img/apartamento_1/baño.jpg' %}" alt="Apartamento Centro" style="width:400px; height:250px; object-fit:cover; border-radius:10px;">
 {% elif prop.id == 2 %}
-    <img src="{% static 'img/casa_rural.jpg' %}" 
-         alt="casa rural"
-         style="width:400px; height:250px; object-fit:cover; border-radius:10px;">
+    <img src="{% static 'img/casa_rural.jpg' %}" alt="casa rural" style="width:400px; height:250px; object-fit:cover; border-radius:10px;">
+    <img src="{% static 'img/Crural_1/ft1.jpg' %}" alt="casa rural" style="width:400px; height:250px; object-fit:cover; border-radius:10px;">
+    <img src="{% static 'img/Crural_1/ft2.jpg' %}" alt="casa rural" style="width:400px; height:250px; object-fit:cover; border-radius:10px;">
+    <img src="{% static 'img/Crural_1/ft3.jpg' %}" alt="casa rural" style="width:400px; height:250px; object-fit:cover; border-radius:10px;">
+    <img src="{% static 'img/Crural_1/ft4.jpg' %}" alt="casa rural" style="width:400px; height:250px; object-fit:cover; border-radius:10px;">
+    <img src="{% static 'img/Crural_1/ft5.jpg' %}" alt="casa rural" style="width:400px; height:250px; object-fit:cover; border-radius:10px;">
+    
+
+{% elif prop.id == 3 %}
+    <img src="{% static 'img/apartamento_2/balcon2.jpg' %}" alt="Apartamento Centro." style="width:350px; height:300px; object-fit:cover; border-radius:10px;"> 
+     <img src="{% static 'img/apartamento_2/habitacion2.jpg' %}" alt="Apartamento Centro." style="width:350px; height:300px; object-fit:cover; border-radius:10px;"> 
+     <img src="{% static 'img/apartamento_2/balco1.jpg' %}" alt="Apartamento Centro." style="width:350px; height:300px; object-fit:cover; border-radius:10px;"> 
+      <img src="{% static 'img/apartamento_2/baño1.jpg' %}" alt="Apartamento Centro." style="width:400px; height:300px; object-fit:cover; border-radius:10px;"> 
+       <img src="{% static 'img/apartamento_2/cocina.jpg' %}" alt="Apartamento Centro." style="width:400px; height:300px; object-fit:cover; border-radius:10px;"> 
+    
+    {% elif prop.id == 4 %}
+    <img src="{% static 'img/casa_rural2.jpg' %}" alt="casa rural." style="width:400px; height:250px; object-fit:cover; border-radius:10px;"> 
+    <img src="{% static 'img/Crural_2/vista.jpg' %}" alt="casa rural." style="width:400px; height:250px; object-fit:cover; border-radius:10px;"> 
+    <img src="{% static 'img/Crural_2/zonasocial.jpg' %}" alt="casa rural." style="width:400px; height:250px; object-fit:cover; border-radius:10px;"> 
+    <img src="{% static 'img/Crural_2/pisina.jpg' %}" alt="casa rural." style="width:400px; height:250px; object-fit:cover; border-radius:10px;"> 
+    <img src="{% static 'img/Crural_2/cocina.jpg' %}" alt="casa rural." style="width:400px; height:250px; object-fit:cover; border-radius:10px;">      
+    <img src="{% static 'img/Crural_2/baño.jpg' %}" alt="casa rural." style="width:400px; height:250px; object-fit:cover; border-radius:10px;"> 
+    <img src="{% static 'img/Crural_2/habitaciin.jpg' %}" alt="casa rural." style="width:400px; height:250px; object-fit:cover; border-radius:10px;">    
 {% else %}
-    <img src="{% static 'img/default.jpg' %}" 
-         alt="Imagen no disponible"
-         style="width:400px; height:250px; object-fit:cover; border-radius:10px;">
+    <img src="{% static 'img/default.jpg' %}" alt="Imagen no disponible" style="width:400px; height:250px; object-fit:cover; border-radius:10px;">
+    
+        
 {% endif %}
 </section>
 
 
 <p>{{ prop.summary }}</p>
-
+.
 <ul>
     <li><strong>Habitaciones:</strong> {{ prop.rooms }}</li>
     <li><strong>Baños:</strong> {{ prop.baths }}</li>
@@ -42,7 +64,7 @@
 
 <p><strong>Precio:</strong> {{ prop.price }}</p>
 
-<a href="{% url 'agendar' %}" class="btn">Agendar visita</a>
+<a class="btn" href="{% url 'agendar' %}">Agendar visita</a>
 
 </body>
 </html>

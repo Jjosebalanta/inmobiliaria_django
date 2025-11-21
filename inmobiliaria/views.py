@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
-# Sample in-memory properties
+
 PROPIEDADES = [
-    {'id':1,'title':'Apartamento Centro','price':'$250.000.000','rooms':3,'baths':2,'area':'90 m²','summary':'Céntrico, cerca a comercios.','images':['img/apartamento.jpg']},
-    {'id':2,'title':'casa Rural','price':'$480.000.000','rooms':4,'baths':3,'area':'180 m²','summary':'Cerca al mar, excelente vista.','images':['img/casa_rural.jpg']},
+    {'id':1,'title':'Apartamento Centro','price':'$950.000.000','rooms':3,'baths':2,'area':'90 m²','summary':'Céntrico, cerca a comercios.','images':['img/apartamento.jpg']},
+    {'id':2,'title':'casa Rural','price':'$680.000.000','rooms':4,'baths':3,'area':'180 m²','summary':'Cerca al mar, excelente vista.','images':['img/casa_rural.jpg']},
+    {'id':3,'title':'Apartamento Centro.','price':'$1.380.000.000','rooms':4,'baths':3,'area':'130 m²','summary':'Céntrico, cerca a comercios.','images':['img/apartamento2.jpg']},
+    {'id':4,'title':'casa Rural.','price':'$1.780.000.000','rooms':4,'baths':3,'area':'180 m²','summary':'Cerca al mar, excelente vista.','images':['img/casa_rural2.jpg']},
+    
 ]
 
 def home(request):
@@ -17,7 +20,9 @@ def detalle(request, pid):
 
 def agendar(request):
     if request.method=='POST':
-        # No backend persistence; simulate confirmation
+        
         nombre = request.POST.get('nombre')
         return render(request,'inmobiliaria/confirmacion.html',{'nombre':nombre})
     return render(request,'inmobiliaria/agendar.html')
+def terminos(request):
+    return render(request, 'inmobiliaria/terminos.html')
